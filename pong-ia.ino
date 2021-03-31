@@ -39,9 +39,9 @@ void loop() {
   }
 
   // Si la balle est au dessus du centre de la raquette, la raquette va vers le bas
-  if (balle_posY > raquette2_posY + raquette_hauteur / 2){
+  if (balle_posY > raquette2_posY + raquette_hauteur / 2 && random(0, 2) == 1){
     raquette2_posY = raquette2_posY + 1;
-  } else {
+  } else if (balle_posY > raquette2_posY + raquette_hauteur / 2 && random(0, 2) == 1){
     // Sinon, elle va vers le haut
     raquette2_posY = raquette2_posY - 1;
   }
