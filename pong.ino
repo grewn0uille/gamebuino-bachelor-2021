@@ -23,6 +23,9 @@ void loop() {
   while (!gb.update());
   gb.display.clear();
 
+  balle_posX = balle_posX + balle_speedX;
+  balle_posY = balle_posY + balle_speedY;
+
   gb.display.fillRect(balle_posX, balle_posY, balle_taille, balle_taille);
   gb.display.fillRect(raquette1_posX, raquette1_posY, raquette_largeur, raquette_hauteur);
   gb.display.fillRect(raquette2_posX, raquette2_posY, raquette_largeur, raquette_hauteur);
