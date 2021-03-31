@@ -13,5 +13,13 @@ void loop() {
 
   positionX = positionX + speedX;
 
+  if(positionX < 0){
+    speedX = 1;
+  }
+
+  if(positionX > gb.display.width()){
+    speedX = -1;
+  }
+
   gb.display.fillRect(positionX, 32, 4, 4);
 }
