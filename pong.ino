@@ -48,13 +48,7 @@ void loop() {
     balle_speedY = -1;
   }
 
-  if (balle_posX < 0) {
-    balle_posX = 20;
-    balle_posY = 20;
-    balle_speedX = 1;
-    balle_speedY = 1;
-  }
-  if (balle_posX > gb.display.width()) {
+  if ((balle_posX < 0) || (balle_posX > gb.display.width())){
     balle_posX = 20;
     balle_posY = 20;
     balle_speedX = 1;
