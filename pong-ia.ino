@@ -66,9 +66,15 @@ void loop() {
         score1 = score1 + 1;
     }
     // On replace la balle
-    balle_posX = 20;
+    balle_posX = random(20, gb.display.height() - 20);
     balle_posY = 20;
+    balle_posY = random(20, gb.display.height() - 20);
     balle_speedX = 1;
+    if (random(0, 2) == 1){
+      balle_speedX = 1;
+    } else {
+      balle_speedX = -1;
+    }
     balle_speedY = 1;
   }
 
