@@ -15,6 +15,9 @@ int raquette2_posY = 30;
 int raquette_hauteur = 12;
 int raquette_largeur = 3;
 
+int score1 = 0;
+int score2 = 0;
+
 void setup() {
   gb.begin();
 }
@@ -49,6 +52,12 @@ void loop() {
   }
 
   if ((balle_posX < 0) || (balle_posX > gb.display.width())){
+    if (balle_posX < 0){
+        score2 = score2 + 1;
+    }
+    if (balle_posX > gb.display.width()){
+        score1 = score1 + 1;
+    }
     balle_posX = 20;
     balle_posY = 20;
     balle_speedX = 1;
@@ -65,6 +74,11 @@ void loop() {
       && (balle_posY <= raquette2_posY + raquette_hauteur)){
     balle_speedX = -1;
   }
+
+  gb.display.setCursor(35, 5);
+  gb.display.print(score1);
+  gb.display.setCursor(42, 5);
+  gb.display.print(score2);
 
   gb.display.fillRect(balle_posX, balle_posY, balle_taille, balle_taille);
   gb.display.fillRect(raquette1_posX, raquette1_posY, raquette_largeur, raquette_hauteur);
